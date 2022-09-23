@@ -1,15 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+
 $clr-right-side: #335049;
 $clr-left-side: #fff1e8;
 $clr-orange: #d06400;
 $clr-marine: #172038;
 
+/*font stack----------*/
+
+$fnt-fantasy: "Lobster", cursive;
+$fnt-r: "Roboto", sans-serif;
+
 body,
 html {
   margin: 0;
-  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  font-family: $fnt-r;
   background: $clr-left-side;
   height: 100vh;
   display: grid;
@@ -76,9 +92,29 @@ aside {
 }
 
 content {
-  padding-top: 2rem;
+  text-align: center;
+  font-size: small;
+  padding: 3em 3em;
   grid-area: content;
   background: $clr-right-side;
+  color: $clr-orange;
+}
+
+h1 {
+  text-align: left;
+  font-family: $fnt-r;
+  color: $clr-orange;
+  font-weight: 900;
+  font-size: 1em;
+  /*   font-style: italic; */
+}
+
+p {
+  text-align: start;
+  color: $clr-marine;
+  font-family: $fnt-fantasy;
+  font-weight: 900;
+  font-size: 2em;
 }
 
 footer {
@@ -111,14 +147,16 @@ footer {
   }
 
   header {
-    display: block;
-    text-align: center;
     grid-area: header;
     background: $clr-right-side;
 
     .navbar {
       display: inherit;
     }
+  }
+
+  .nav-item {
+    margin: 0 5em;
   }
 
   .hamburger {

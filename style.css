@@ -1,10 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+/*font stack----------*/
 body,
 html {
   margin: 0;
-  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  font-family: "Roboto", sans-serif;
   background: #fff1e8;
   height: 100vh;
   display: grid;
@@ -67,9 +78,29 @@ aside {
 }
 
 content {
-  padding-top: 2rem;
+  text-align: center;
+  font-size: small;
+  padding: 3em 3em;
   grid-area: content;
   background: #335049;
+  color: #d06400;
+}
+
+h1 {
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  color: #d06400;
+  font-weight: 900;
+  font-size: 1em;
+  /*   font-style: italic; */
+}
+
+p {
+  text-align: start;
+  color: #172038;
+  font-family: "Lobster", cursive;
+  font-weight: 900;
+  font-size: 2em;
 }
 
 footer {
@@ -96,13 +127,14 @@ footer {
     background: #fff1e8;
   }
   header {
-    display: block;
-    text-align: center;
     grid-area: header;
     background: #335049;
   }
   header .navbar {
     display: inherit;
+  }
+  .nav-item {
+    margin: 0 5em;
   }
   .hamburger {
     display: none;
