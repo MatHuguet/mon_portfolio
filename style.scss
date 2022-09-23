@@ -3,6 +3,157 @@ $clr-left-side: #fff1e8;
 $clr-orange: #d06400;
 $clr-marine: #172038;
 
+body,
+html {
+  margin: 0;
+  font-size: 18px;
+}
+
 body {
   background: $clr-left-side;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 60px 1fr 3rem;
+  grid-template-areas:
+    "logo header"
+    "aside content"
+    "aside footer";
+}
+
+.logo {
+  text-align: center;
+  padding-top: 10px;
+  grid-area: logo;
+  background: $clr-left-side;
+}
+
+.logo-m {
+  width: 2rem;
+  height: 2rem;
+}
+
+header {
+  text-align: center;
+  grid-area: header;
+  background: $clr-right-side;
+
+  .navbar {
+    display: none;
+  }
+}
+
+.navbar,
+li,
+a {
+  display: inline;
+  list-style-type: none;
+  text-decoration: none;
+  color: $clr-left-side;
+}
+
+.hamburger {
+  text-align: end;
+  padding-right: 1rem;
+  padding-top: 18px;
+  grid-area: header;
+  color: $clr-left-side;
+}
+
+aside {
+  display: flex;
+  padding-top: 2rem;
+  grid-area: aside;
+  background: $clr-left-side;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile {
+  display: flex;
+  border-radius: 50%;
+  width: 5rem;
+}
+
+content {
+  padding-top: 2rem;
+  grid-area: content;
+  background: $clr-right-side;
+}
+
+footer {
+  grid-area: footer;
+  background: $clr-marine;
+}
+
+/*--------Media Query >768px----------------*/
+
+@media screen and (min-width: 768px) {
+  body {
+    background: $clr-left-side;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 60px 1fr 2rem;
+    grid-template-areas:
+      "logo header"
+      "aside content"
+      "aside footer";
+  }
+
+  .logo {
+    /*    border: solid 1px red; */
+    text-align: start;
+    padding-top: 10px;
+    padding-left: 2rem;
+    grid-area: logo;
+    background: $clr-left-side;
+  }
+
+  header {
+    display: block;
+    text-align: center;
+    grid-area: header;
+    background: $clr-right-side;
+
+    .navbar {
+      display: inherit;
+    }
+  }
+
+  .hamburger {
+    display: none;
+    text-align: end;
+    padding-right: 1rem;
+    padding-top: 10px;
+    grid-area: header;
+  }
+
+  .profile {
+    display: flex;
+    border-radius: 50%;
+    width: 15rem;
+  }
+}
+
+/*--------Media Query >1024px----------------*/
+
+@media screen and (min-width: 1024px) {
+  .profile {
+    display: flex;
+    border-radius: 50%;
+    width: 20rem;
+  }
+
+  body {
+    background: $clr-left-side;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 60px 1fr 2rem;
+    grid-template-areas:
+      "logo header"
+      "aside content"
+      "aside footer";
+  }
 }
