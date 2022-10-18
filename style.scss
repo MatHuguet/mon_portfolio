@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,400;1,900&display=swap");
 
 $clr-right-side: #335049;
 $clr-left-side: #fff1e8;
@@ -10,6 +11,11 @@ $clr-marine: #172038;
 
 $fnt-fantasy: "Lobster", cursive;
 $fnt-r: "Roboto", sans-serif;
+$fnt-msrt: "Montserrat", sans-serif;
+
+/*font size-----------*/
+
+$fs-sm: clamp(0.6rem, 0.4vw + 0.7rem, 3rem);
 
 body,
 html {
@@ -25,7 +31,7 @@ p {
 }
 
 body {
-  font-family: $fnt-r;
+  font-family: $fnt-msrt;
   background: $clr-left-side;
   height: 100vh;
   display: grid;
@@ -34,7 +40,7 @@ body {
   grid-template-areas:
     "logo header"
     "aside content"
-    "aside footer";
+    "footer footer";
 }
 
 .logo {
@@ -78,7 +84,7 @@ a {
 
 aside {
   display: flex;
-  padding-top: 2rem;
+  padding-top: 1rem;
   grid-area: aside;
   background: $clr-left-side;
   justify-content: center;
@@ -88,24 +94,26 @@ aside {
 .profile {
   display: flex;
   border-radius: 50%;
-  width: 5rem;
+  width: 4rem;
+  height: 3.7rem;
 }
 
 content {
   text-align: center;
-  font-size: small;
-  padding: 3em 3em;
+  font-size: $fs-sm;
   grid-area: content;
   background: $clr-right-side;
   color: $clr-orange;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 h1 {
   text-align: left;
-  font-family: $fnt-r;
+  font-family: $fnt-msrt;
   color: $clr-orange;
   font-weight: 900;
-  font-size: 1em;
+  font-size: 1.7em;
   /*   font-style: italic; */
 }
 
@@ -113,8 +121,7 @@ p {
   text-align: start;
   color: $clr-marine;
   font-family: $fnt-fantasy;
-  font-weight: 900;
-  font-size: 2em;
+  font-size: $fs-sm;
 }
 
 footer {
@@ -134,7 +141,7 @@ footer {
     grid-template-areas:
       "logo header"
       "aside content"
-      "aside footer";
+      "footer footer";
   }
 
   .logo {
@@ -170,7 +177,8 @@ footer {
   .profile {
     display: flex;
     border-radius: 50%;
-    width: 15rem;
+    width: 14rem;
+    height: 13.5rem;
   }
 }
 
@@ -180,7 +188,8 @@ footer {
   .profile {
     display: flex;
     border-radius: 50%;
-    width: 20rem;
+    width: 15rem;
+    height: 14.6rem;
   }
 
   body {
@@ -192,6 +201,6 @@ footer {
     grid-template-areas:
       "logo header"
       "aside content"
-      "aside footer";
+      "footer footer";
   }
 }

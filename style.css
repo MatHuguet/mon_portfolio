@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,400;1,900&display=swap");
 /*font stack----------*/
+/*font size-----------*/
 body,
 html {
   margin: 0;
@@ -15,13 +17,13 @@ p {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background: #fff1e8;
   height: 100vh;
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 60px 1fr 3rem;
-  grid-template-areas: "logo header" "aside content" "aside footer";
+  grid-template-areas: "logo header" "aside content" "footer footer";
 }
 
 .logo {
@@ -64,7 +66,7 @@ a {
 
 aside {
   display: flex;
-  padding-top: 2rem;
+  padding-top: 1rem;
   grid-area: aside;
   background: #fff1e8;
   justify-content: center;
@@ -74,24 +76,26 @@ aside {
 .profile {
   display: flex;
   border-radius: 50%;
-  width: 5rem;
+  width: 4rem;
+  height: 3.7rem;
 }
 
 content {
   text-align: center;
-  font-size: small;
-  padding: 3em 3em;
+  font-size: clamp(0.6rem, 0.4vw + 0.7rem, 3rem);
   grid-area: content;
   background: #335049;
   color: #d06400;
+  padding-top: 1rem;
+  padding-left: 1rem;
 }
 
 h1 {
   text-align: left;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #d06400;
   font-weight: 900;
-  font-size: 1em;
+  font-size: 1.7em;
   /*   font-style: italic; */
 }
 
@@ -99,8 +103,7 @@ p {
   text-align: start;
   color: #172038;
   font-family: "Lobster", cursive;
-  font-weight: 900;
-  font-size: 2em;
+  font-size: clamp(0.6rem, 0.4vw + 0.7rem, 3rem);
 }
 
 footer {
@@ -116,7 +119,7 @@ footer {
     display: grid;
     grid-template-columns: 35% 65%;
     grid-template-rows: 60px 1fr 2rem;
-    grid-template-areas: "logo header" "aside content" "aside footer";
+    grid-template-areas: "logo header" "aside content" "footer footer";
   }
   .logo {
     /*    border: solid 1px red; */
@@ -146,7 +149,8 @@ footer {
   .profile {
     display: flex;
     border-radius: 50%;
-    width: 15rem;
+    width: 14rem;
+    height: 13.5rem;
   }
 }
 /*--------Media Query >1024px----------------*/
@@ -154,7 +158,8 @@ footer {
   .profile {
     display: flex;
     border-radius: 50%;
-    width: 20rem;
+    width: 15rem;
+    height: 14.6rem;
   }
   body {
     background: #fff1e8;
@@ -162,6 +167,6 @@ footer {
     display: grid;
     grid-template-columns: 25% 75%;
     grid-template-rows: 60px 1fr 2rem;
-    grid-template-areas: "logo header" "aside content" "aside footer";
+    grid-template-areas: "logo header" "aside content" "footer footer";
   }
 }/*# sourceMappingURL=style.css.map */
