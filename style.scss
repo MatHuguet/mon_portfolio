@@ -16,7 +16,9 @@ $fnt-msrt: "Montserrat", sans-serif;
 /*font size-----------*/
 
 $fs-sm: clamp(0.6rem, 0.4vw + 0.7rem, 3rem);
-
+$fs-md: clamp(1rem, 1vw + 1rem, 4rem);
+$fs-xl: clamp(2rem, 2.3rem + 1rem, 5rem);
+//TODO resize the XL font size for large screen
 body,
 html {
   margin: 0;
@@ -173,12 +175,22 @@ footer {
     padding-top: 10px;
     grid-area: header;
   }
-
+  //TODO set the correct size for profile picture in MD
   .profile {
     display: flex;
     border-radius: 50%;
     width: 14rem;
     height: 13.5rem;
+  }
+
+  content {
+    text-align: center;
+    font-size: $fs-md;
+    grid-area: content;
+    background: $clr-right-side;
+    color: $clr-orange;
+    padding-top: 1rem;
+    padding-left: 1rem;
   }
 }
 
@@ -202,5 +214,15 @@ footer {
       "logo header"
       "aside content"
       "footer footer";
+  }
+
+  content {
+    text-align: center;
+    font-size: $fs-xl;
+    grid-area: content;
+    background: $clr-right-side;
+    color: $clr-orange;
+    padding-top: 1rem;
+    padding-left: 1rem;
   }
 }

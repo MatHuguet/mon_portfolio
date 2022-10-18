@@ -152,6 +152,15 @@ footer {
     width: 14rem;
     height: 13.5rem;
   }
+  content {
+    text-align: center;
+    font-size: clamp(1rem, 1vw + 1rem, 4rem);
+    grid-area: content;
+    background: #335049;
+    color: #d06400;
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
 }
 /*--------Media Query >1024px----------------*/
 @media screen and (min-width: 1024px) {
@@ -168,5 +177,14 @@ footer {
     grid-template-columns: 25% 75%;
     grid-template-rows: 60px 1fr 2rem;
     grid-template-areas: "logo header" "aside content" "footer footer";
+  }
+  content {
+    text-align: center;
+    font-size: 3.3rem;
+    grid-area: content;
+    background: #335049;
+    color: #d06400;
+    padding-top: 1rem;
+    padding-left: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
