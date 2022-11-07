@@ -31,35 +31,28 @@ body {
   background: $clr-right-side;
   height: 100vh;
   width: 100vw;
-  // display: grid;
-  // grid-template-columns: 30% 70%;
-  // grid-template-rows: 60px 1fr 3rem;
-  // grid-template-areas:
-  //   "header header"
-  //   "content content"
-  //   "footer footer";
 }
 
 header {
-  text-align: center;
-  grid-area: header;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
   padding: 0;
-  height: 75px;
-  width: 100%;
+  height: 90px;
+  width: 70%;
+}
 
-  .navbar {
-    display: none;
-    margin: 0;
-    padding: 0;
-  }
+.logoM {
+  color: $clr-orange;
+  font-family: $fnt-fantasy;
+  font-size: 5rem;
 }
 
 .navbar,
 li,
 a {
-  visibility: hidden;
-  display: inline;
+  display: none;
   list-style-type: none;
   text-decoration: none;
   color: $clr-left-side;
@@ -70,6 +63,7 @@ a {
 // --------HAMBURGER--------
 
 .ham-container {
+  z-index: 2;
   position: absolute;
   display: flex;
   position: fixed;
@@ -78,6 +72,7 @@ a {
 }
 
 .hamburger {
+  z-index: 2;
   background-color: $clr-right-side;
   display: flex;
   justify-content: center;
@@ -87,6 +82,7 @@ a {
   // right: 2rem;
   // top: 0.6rem;
   border: solid 3px $clr-left-side;
+  box-shadow: 3px 3px 8px 0.6px;
   transition: 0.4s ease-in-out;
   border-radius: 10%;
   height: 60px;
@@ -94,6 +90,8 @@ a {
 }
 
 .ham-lines {
+  box-shadow: 3px 3px 8px 0.4px;
+  z-index: 2;
   transition: all 0.4s ease-in-out;
   width: 40px;
   height: 5px;
@@ -104,6 +102,8 @@ a {
 .ham-lines::before,
 .ham-lines::after {
   content: "";
+  box-shadow: 3px 3px 8px 0.6px;
+  z-index: 2;
   transition: all 0.4s ease-in-out;
   position: absolute;
   width: 40px;
@@ -145,6 +145,7 @@ a {
     width: 0;
     height: 0px;
     border-radius: 0;
+    background-color: transparent;
   }
   .ham-lines::before {
     transform: rotate(45deg) translate(-14px, 14px);
@@ -157,7 +158,20 @@ a {
 }
 
 // -------HAMBURGER END------
+// -------HAMBURGER SIDE MENU ONCLICK--------
 
+.ham-side-container {
+  position: fixed;
+  top: 0;
+  transform: translateY(-200px);
+  z-index: 1;
+  height: 200px;
+  width: 100vw;
+  background-color: #fff1e8;
+}
+
+// ------- END HAMBURGER SIDE MENU ONCLICK--------
+// ------------------------------------------
 h1 {
   text-align: center;
   padding-right: 6rem;
