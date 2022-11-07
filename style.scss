@@ -161,9 +161,20 @@ a {
 // -------HAMBURGER SIDE MENU ONCLICK--------
 
 .ham-side-container {
+  transition: 0.5s ease;
   position: fixed;
   top: 0;
   transform: translateY(-200px);
+  z-index: 1;
+  height: 200px;
+  width: 100vw;
+  background-color: #fff1e8;
+}
+
+.hamNavOpen {
+  position: fixed;
+  top: 0;
+  transform: translateY(0px);
   z-index: 1;
   height: 200px;
   width: 100vw;
