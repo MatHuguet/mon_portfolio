@@ -26,8 +26,7 @@ html {
 
 h1,
 h2,
-h3,
-p {
+h3 {
   margin: 0;
   padding: 0;
 }
@@ -43,18 +42,6 @@ body {
     "header header"
     "content content"
     "footer footer";
-}
-
-.logo {
-  text-align: center;
-  padding-top: 10px;
-  grid-area: logo;
-  background: $clr-left-side;
-}
-
-.logo-m {
-  width: 2rem;
-  height: 2rem;
 }
 
 header {
@@ -76,13 +63,52 @@ a {
   color: $clr-left-side;
 }
 
+// --------HAMBURGER--------
+
 .hamburger {
-  text-align: end;
-  padding-right: 1rem;
-  padding-top: 18px;
-  grid-area: header;
-  color: $clr-left-side;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
 }
+
+.circle-hover {
+  visibility: hidden;
+  position: absolute;
+  right: 5px;
+  top: -3px;
+  height: 0px;
+  width: 0px;
+  border-radius: 50%;
+  color: white;
+}
+
+.hamburger:hover {
+  .hamburger {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+  }
+  .circle-hover {
+    visibility: hidden;
+    transition: 0.3s ease;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    height: 35px;
+    width: 35px;
+    border: solid 3px white;
+    border-radius: 50%;
+  }
+}
+
+.ham-line {
+  background-color: #fff1e8;
+  height: 4px;
+  width: 35px;
+  margin: 8px;
+}
+
+// -------HAMBURGER END------
 
 content {
   text-align: center;
@@ -108,7 +134,7 @@ p {
   color: $clr-marine;
   font-family: $fnt-fantasy;
   font-size: $fs-sm;
-  padding: 50px 200px;
+  padding: 50px 100px;
 }
 
 footer {
@@ -160,6 +186,7 @@ footer {
     padding-top: 10px;
     grid-area: header;
   }
+
   //TODO set the correct size for profile picture in MD
   .profile {
     display: flex;
