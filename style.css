@@ -22,19 +22,18 @@ header {
   align-items: center;
   margin-right: 0;
   padding: 0;
-  height: 90px;
-  width: 70%;
+  height: 150px;
+  width: 100%;
 }
 
 .logoM {
   color: #d06400;
   font-family: "Lobster", cursive;
   font-size: 5rem;
+  margin-right: 90px;
 }
 
-.navbar,
-li,
-a {
+.navbar {
   display: none;
   list-style-type: none;
   text-decoration: none;
@@ -48,7 +47,7 @@ a {
   position: absolute;
   display: flex;
   position: fixed;
-  top: 14px;
+  top: 40px;
   right: 2rem;
 }
 
@@ -136,21 +135,40 @@ a {
   transition: 0.5s ease;
   position: fixed;
   top: 0;
-  transform: translateY(-200px);
+  right: 0;
   z-index: 1;
-  height: 200px;
-  width: 100vw;
+  height: 60%;
+  width: 0;
   background-color: #fff1e8;
 }
 
 .hamNavOpen {
   position: fixed;
   top: 0;
-  transform: translateY(0px);
+  right: 0;
   z-index: 1;
-  height: 200px;
+  height: 60%;
   width: 100vw;
   background-color: #fff1e8;
+}
+
+.ham-side-menu > ul {
+  padding-left: 30%;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: none;
+}
+.ham-side-menu > ul li {
+  padding-top: 50px;
+}
+
+.nav-phone-tab > li > a {
+  text-decoration: none;
+  color: #172038;
+  font-weight: 500;
 }
 
 h1 {
@@ -169,8 +187,8 @@ p {
   font-family: "Lobster", cursive;
   font-size: clamp(0.6rem, 0.4vw + 0.7rem, 3rem);
   padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 8rem;
+  padding-left: 3rem;
+  padding-right: 7rem;
 }
 
 footer {
