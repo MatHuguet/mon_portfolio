@@ -3,8 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,400;1,900&display=swap");
 
 $clr-right-side: #335049;
-$clr-left-side: #fff1e8;
-$clr-orange: #d06400;
+$clr-left-side: rgb(255, 183, 16);
+$clr-shadow-or-pink: #5c4e45;
+$clr-orange: #fff;
 $clr-marine: #172038;
 
 /*font stack----------*/
@@ -51,6 +52,11 @@ p {
   padding: 2rem 2rem;
 }
 
+// a {
+//   text-decoration: none;
+//   color: $clr-orange;
+// }
+
 footer {
   background: $clr-marine;
 }
@@ -74,6 +80,7 @@ header {
   color: $clr-orange;
   font-family: $fnt-fantasy;
   font-size: 5rem;
+  text-shadow: 4px 4px 4px black;
 }
 
 .navbar {
@@ -98,13 +105,13 @@ header {
 
 .hamburger {
   z-index: 2;
-  background-color: $clr-right-side;
+  background-color: $clr-left-side;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border: solid 3px $clr-left-side;
-  box-shadow: 3px 3px 8px 0.6px;
+  border: solid 3px $clr-orange;
+  box-shadow: 3px 3px 8px 0.6px $clr-shadow-or-pink;
   transition: 0.4s ease-in-out;
   border-radius: 10%;
   height: 50px;
@@ -112,25 +119,25 @@ header {
 }
 
 .ham-lines {
-  box-shadow: 3px 3px 8px 0.4px;
+  box-shadow: 3px 3px 8px 0.4px $clr-shadow-or-pink;
   z-index: 2;
   transition: all 0.4s ease-in-out;
   width: 30px;
   height: 5px;
-  background-color: #fff1e8;
+  background-color: $clr-orange;
   border-radius: 10%;
 }
 
 .ham-lines::before,
 .ham-lines::after {
   content: "";
-  box-shadow: 3px 3px 8px 0.6px;
+  box-shadow: 3px 3px 8px 0.6px $clr-shadow-or-pink;
   z-index: 2;
   transition: all 0.4s ease-in-out;
   position: absolute;
   width: 30px;
   height: 5px;
-  background-color: #fff1e8;
+  background-color: $clr-orange;
   border-radius: 10%;
 }
 
@@ -146,6 +153,7 @@ header {
 
 .open-menu {
   .hamburger {
+    z-index: 2;
     background-color: $clr-right-side;
     position: relative;
     display: flex;
@@ -163,6 +171,7 @@ header {
   }
 
   .ham-lines {
+    cursor: pointer;
     transition: all 0.4s ease-in-out;
     width: 0;
     height: 0px;
@@ -181,28 +190,28 @@ header {
 
 // -------HAMBURGER END------
 // -------HAMBURGER SIDE MENU ONCLICK--------
-
+//TODO: fix transition of nav items in the top nav
 .ham-side-container {
-  transition: 0.3s ease;
+  transition: 0.6s ease;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 0;
   height: 0;
   width: 100%;
-  background-color: #fff1e8;
+  background-color: $clr-left-side;
   visibility: hidden;
 }
 
 .hamNavOpen {
-  transition: 0.4s ease-in-out;
+  transition: 0.3s ease-out;
   position: fixed;
   top: 5rem;
   right: 0;
   z-index: 1;
   height: 25%;
   width: 100vw;
-  background-color: #fff1e8;
+  background-color: $clr-left-side;
   visibility: visible;
 }
 
@@ -211,19 +220,6 @@ header {
   // display: flex;
   // flex-direction: column;
   list-style-type: none;
-
-  li {
-    padding-bottom: 2rem;
-    text-align: center;
-  }
-}
-
-.nav-phone-tab > li > a {
-  font-weight: bold;
-  font-size: $fs-sm;
-  transition: 0.2s ease;
-  text-decoration: none;
-  background-color: none;
 }
 
 // ------- END HAMBURGER SIDE MENU ONCLICK--------
