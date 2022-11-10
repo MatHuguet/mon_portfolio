@@ -15,10 +15,9 @@ $fnt-msrt: "Montserrat", sans-serif;
 
 /*font size-----------*/
 
-$fs-sm: clamp(0.6rem, 0.4vw + 0.7rem, 3rem);
+$fs-sm: clamp(0.6rem, 0.4vw + 1rem, 3rem);
 $fs-md: clamp(1rem, 1vw + 1rem, 4rem);
-$fs-xl: clamp(2rem, 1.4vw + 1rem, 4rem);
-//TODO resize the XL font size for large screen
+$fs-xl: clamp(2rem, 1.4vw + 1.8rem, 15rem);
 
 * {
   margin: 0;
@@ -33,21 +32,48 @@ body {
   width: 100vw;
 }
 
+h1 {
+  text-align: start;
+  padding-top: 12rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  font-family: $fnt-msrt;
+  color: $clr-orange;
+  font-weight: 900;
+  font-size: $fs-xl;
+}
+
+p {
+  text-align: justify;
+  color: $clr-left-side;
+  font-family: $fnt-r;
+  font-size: $fs-sm;
+  padding: 2rem 2rem;
+}
+
+footer {
+  background: $clr-marine;
+}
+
 header {
+  position: fixed;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 0;
   padding: 0;
-  height: 150px;
+  background-color: $clr-left-side;
+  height: 100px;
   width: 100%;
 }
 
 .logoM {
+  position: absolute;
+  z-index: 10;
   color: $clr-orange;
   font-family: $fnt-fantasy;
   font-size: 5rem;
-  margin-right: 90px;
 }
 
 .navbar {
@@ -66,7 +92,7 @@ header {
   position: absolute;
   display: flex;
   position: fixed;
-  top: 40px;
+  top: 25px;
   right: 2rem;
 }
 
@@ -81,15 +107,15 @@ header {
   box-shadow: 3px 3px 8px 0.6px;
   transition: 0.4s ease-in-out;
   border-radius: 10%;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
 }
 
 .ham-lines {
   box-shadow: 3px 3px 8px 0.4px;
   z-index: 2;
   transition: all 0.4s ease-in-out;
-  width: 40px;
+  width: 30px;
   height: 5px;
   background-color: #fff1e8;
   border-radius: 10%;
@@ -102,7 +128,7 @@ header {
   z-index: 2;
   transition: all 0.4s ease-in-out;
   position: absolute;
-  width: 40px;
+  width: 30px;
   height: 5px;
   background-color: #fff1e8;
   border-radius: 10%;
@@ -128,7 +154,7 @@ header {
     position: absolute;
     cursor: pointer;
     right: 2rem;
-    top: 0.6rem;
+    top: 0.4rem;
     border: solid 3px $clr-left-side;
     transition: 0.4s ease-in-out;
     border-radius: 10%;
@@ -144,11 +170,11 @@ header {
     background-color: transparent;
   }
   .ham-lines::before {
-    transform: rotate(45deg) translate(-14px, 14px);
+    transform: rotate(45deg) translate(-10px, 10px);
     border-radius: 10%;
   }
   .ham-lines::after {
-    transform: rotate(-45deg) translate(-14px, -14px);
+    transform: rotate(-45deg) translate(-10px, -10px);
     border-radius: 10%;
   }
 }
@@ -157,184 +183,50 @@ header {
 // -------HAMBURGER SIDE MENU ONCLICK--------
 
 .ham-side-container {
-  transition: 0.5s ease;
+  transition: 0.3s ease;
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 1;
-  height: 60%;
-  width: 0;
+  z-index: 0;
+  height: 0;
+  width: 100%;
   background-color: #fff1e8;
+  visibility: hidden;
 }
 
 .hamNavOpen {
+  transition: 0.4s ease-in-out;
   position: fixed;
-  top: 0;
+  top: 5rem;
   right: 0;
   z-index: 1;
-  height: 60%;
+  height: 25%;
   width: 100vw;
   background-color: #fff1e8;
+  visibility: visible;
 }
 
 .ham-side-menu > ul {
-  padding-left: 30%;
-  padding-top: 50px;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-  justify-content: center;
+  padding-top: 3em;
+  // display: flex;
+  // flex-direction: column;
   list-style-type: none;
 
   li {
-    padding-top: 50px;
+    padding-bottom: 2rem;
+    text-align: center;
   }
 }
 
 .nav-phone-tab > li > a {
+  font-weight: bold;
+  font-size: $fs-sm;
+  transition: 0.2s ease;
   text-decoration: none;
-  color: $clr-marine;
-  font-weight: 500;
+  background-color: none;
 }
 
 // ------- END HAMBURGER SIDE MENU ONCLICK--------
 // ------------------------------------------
-h1 {
-  text-align: center;
-  padding-right: 6rem;
-  padding-top: 4rem;
-  font-family: $fnt-msrt;
-  color: $clr-orange;
-  font-weight: 900;
-  font-size: 1.7em;
-}
-
-p {
-  text-align: justify;
-  color: $clr-marine;
-  font-family: $fnt-fantasy;
-  font-size: $fs-sm;
-  padding-top: 2rem;
-  padding-left: 3rem;
-  padding-right: 7rem;
-}
-
-footer {
-  grid-area: footer;
-  background: $clr-marine;
-}
 
 /*--------Media Query >768px----------------*/
-
-@media screen and (min-width: 768px) {
-  body {
-    background: $clr-left-side;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 35% 65%;
-    grid-template-rows: 60px 1fr 2rem;
-    grid-template-areas:
-      "header header"
-      "content content"
-      "footer footer";
-  }
-
-  .logo {
-    /*    border: solid 1px red; */
-    text-align: start;
-    padding-top: 10px;
-    padding-left: 2rem;
-    grid-area: logo;
-    background: $clr-left-side;
-  }
-
-  header {
-    grid-area: header;
-    background: $clr-right-side;
-
-    .navbar {
-      display: inherit;
-    }
-  }
-
-  .nav-item {
-    margin: 0 5em;
-  }
-
-  .hamburger {
-    display: none;
-    text-align: end;
-    padding-right: 1rem;
-    padding-top: 10px;
-    grid-area: header;
-  }
-
-  //TODO set the correct size for profile picture in MD
-  .profile {
-    display: flex;
-    border-radius: 50%;
-    width: 14rem;
-    height: 13.5rem;
-  }
-
-  content {
-    text-align: center;
-    font-size: $fs-md;
-    grid-area: content;
-    background: $clr-right-side;
-    color: $clr-orange;
-    padding-top: 1rem;
-    padding-left: 1rem;
-  }
-}
-
-/*--------Media Query >1024px----------------*/
-
-@media screen and (min-width: 1024px) {
-  .profile {
-    display: flex;
-    border-radius: 50%;
-    margin-top: 3rem;
-    width: 15rem;
-    height: 14.6rem;
-  }
-
-  .side-nav-container {
-    position: fixed;
-    right: 0;
-    top: 40vh;
-    height: 10rem;
-    width: 5rem;
-    border: solid 1px black;
-    border-radius: 50% 0 0 50%;
-    background-color: #fff1e8;
-  }
-
-  .circle-menu {
-    width: 20px;
-    height: 20px;
-    border: solid 1px black;
-    border-radius: 50%;
-  }
-  body {
-    background: $clr-left-side;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 60px 1fr 2rem;
-    grid-template-areas:
-      "header header"
-      "content content"
-      "footer footer";
-  }
-
-  content {
-    text-align: center;
-    font-size: $fs-xl;
-    grid-area: content;
-    background: $clr-right-side;
-    color: $clr-orange;
-    padding-top: 7rem;
-    padding-left: 4rem;
-  }
-}
