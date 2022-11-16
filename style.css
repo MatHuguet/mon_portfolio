@@ -19,7 +19,7 @@ body {
 h1 {
   word-wrap: break-word;
   text-align: start;
-  padding-top: 15rem;
+  padding-top: 25rem;
   padding-left: 1.8rem;
   padding-right: 2.6rem;
   font-family: "Montserrat", sans-serif;
@@ -278,6 +278,22 @@ header {
   width: 6rem;
   height: 2px;
   background-color: #fcfffe;
+}
+
+.img-container {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  padding-top: 12rem;
+}
+
+div.frontImg {
+  background-image: url("./img/keyboardPerspCyclesFocusShadowC.png");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 /*--------Media Query >768px----------------*//*# sourceMappingURL=style.css.map */
